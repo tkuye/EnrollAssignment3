@@ -241,8 +241,10 @@ class EnrollTable:
         
     def insert(self, item:StudentNode) -> None:
         pc = PrintColour()
+
         """Inserts a given item, a student node object into the enrollment table. """
         assert self.tableSize < self.capacity, "Table is full cannot insert."
+        assert self.size() < self.MAX_CAPACITY, "Table is full cannot insert."
         assert isinstance(item, StudentNode), "Not a student node, cannot insert."
         assert self.isEnrolled(item.getID()) is False, "Already enrolled cannot enroll again!"
         index = self.cmputIndex(item.getID())
@@ -289,8 +291,9 @@ class EnrollTable:
                     prev = prev.getNext()
         
         
+
     def isFull(self):
-        return self.capacity == self.tableSize
+        return (self.capacity - 1) == self.tableSize
        
         
     def incTable(self) -> None:

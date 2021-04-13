@@ -247,7 +247,7 @@ class testAssignment(unittest.TestCase):
             f.close()
         self.pc.printout(queue, color="WHITE")
         self.pc.printout(table, color="WHITE")
-        self.assertEqual(table.size(), 51)
+        self.assertEqual(table.size(), 50)
     def test_drop_student(self):
         queue = PriorityQueue()
         table = EnrollTable(51)

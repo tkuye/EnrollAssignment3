@@ -35,6 +35,7 @@ def enrollStudentData(file, enrollTable:EnrollTable, queue:PriorityQueue) -> Non
         else:
             node = StudentNode(studentId, faculty, fname, lname)
             try:
+                
                 enrollTable.insert(node)
             except AssertionError as e:
                 pc.printout(e.args[0], color="RED")

@@ -293,7 +293,7 @@ class EnrollTable:
         
 
     def isFull(self):
-        return (self.capacity - 1) == self.tableSize
+        return self.capacity == self.tableSize
        
         
     def incTable(self) -> None:
